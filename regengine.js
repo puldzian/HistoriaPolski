@@ -1,4 +1,4 @@
-/*global $, document, generator*/
+/*global $, document, gener*/
 var rok = 966,
     rokkonca = new Date().getFullYear(),
     epoka = 0, // 0 - 966-1500, 1 - 1500 - 1900, 2 - 1900 - 2000, 3 - 2000+?
@@ -54,22 +54,36 @@ var kalendarz = function () {
     "use strict";
     // Ustanów epokę
     if (rok < 1200) {
-        epoka = 0; // Prymitywizm
+        // Prymitywizm
+        epoka = 0;
+        if (kierunek === 1) {
+            rok = rok + losujCos(10);
+        } else if (kierunek === 2) {
+            rok = rok - losujCos(10);
+        }                           // TU TRZEBA ZMIENIĆ TE LATA na 40
     } else if (rok >= 1200 && rok < 1400) {
         epoka = 1; // Średniowiecze
+        if (kierunek === 1) {
+            rok = rok + losujCos(30);
+        } else if (kierunek === 2) {
+            rok = rok - losujCos(30);
+        }
     } else if (rok >= 1400 && rok < 2000) {
         epoka = 2; // Epoka zastępcza
+        if (kierunek === 1) {
+            rok = rok + losujCos(50);
+        } else if (kierunek === 2) {
+            rok = rok - losujCos(50);
+        }
     } else if (rok >= 2000) {
-        epoka = 9; // Współczesność
+        // Współczesność
+        epoka = 9;
+        if (kierunek === 1) {
+            rok = rok + losujCos(10);
+        } else if (kierunek === 2) {
+            rok = rok - losujCos(10);
+        }
     }
-    // Dodaj lata wedle kierunku
-    // Później uzupełnić o liczby według epok
-    if (kierunek === 1) {
-        rok = rok + losujCos(20);
-    } else if (kierunek === 2) {
-        rok = rok - losujCos(20);
-    }
-
     // Na granicy przedziału odbij kierunek
     if (rok > rokkonca) {
         rok = rokkonca;
@@ -84,6 +98,16 @@ var kalendarz = function () {
     // Koniec kalendarza
 };
 
+var generator = function () {
+    if (epoka === 0) {
+        // status = "Generuj prymitywną";
+        status = gener.prymitywna();
+    } else {
+        status = "Epoka inna."
+    }
+    $("#jsStatus").html(status);
+}
+
 // SKRYPTY SYSTEMOWE
 
 // Agregator treści i wypełniacz
@@ -96,13 +120,13 @@ var agregator = function () {
     setTimeout(agregator, predkosc);
 };
 
-// Uruchamiacz
+// Kliknij i uruchom
 var rozrusznik = function () {
     "use strict";
     agregator();
 };
 
-// Gówno
+// Gówno, nic tu nie ma
 $(document).ready(function () {
     "use strict";
 });

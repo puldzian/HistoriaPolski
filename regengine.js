@@ -1,10 +1,11 @@
-/*global $, document*/
+/*global $, document, generator*/
 var rok = 966,
     rokkonca = new Date().getFullYear(),
     epoka = 0, // 0 - 966-1500, 1 - 1500 - 1900, 2 - 1900 - 2000, 3 - 2000+?
     kierunek = 1, // 1 - do przodu, 2 - do tyłu
     predkosc = 750,
-    ileBylo = 0;
+    ileBylo = 0,
+    status; // to służy do wypełniania
 
 // Losuje któryś z N elementów
 var losujCos = function (n) {
@@ -51,13 +52,7 @@ var szybciej = function () {
 // Kontrola upływu lat
 var kalendarz = function () {
     "use strict";
-    // Dodaj lata wedle kierunku
-    // Później uzupełnić o liczby według epok
-    if (kierunek === 1) {
-        rok = rok + losujCos(20);
-    } else if (kierunek === 2) {
-        rok = rok - losujCos(20);
-    }
+    // Ustanów epokę
     if (rok < 1200) {
         epoka = 0; // Prymitywizm
     } else if (rok >= 1200 && rok < 1400) {
@@ -67,6 +62,14 @@ var kalendarz = function () {
     } else if (rok >= 2000) {
         epoka = 9; // Współczesność
     }
+    // Dodaj lata wedle kierunku
+    // Później uzupełnić o liczby według epok
+    if (kierunek === 1) {
+        rok = rok + losujCos(20);
+    } else if (kierunek === 2) {
+        rok = rok - losujCos(20);
+    }
+
     // Na granicy przedziału odbij kierunek
     if (rok > rokkonca) {
         rok = rokkonca;
@@ -81,10 +84,13 @@ var kalendarz = function () {
     // Koniec kalendarza
 };
 
+// SKRYPTY SYSTEMOWE
+
 // Agregator treści i wypełniacz
 var agregator = function () {
     "use strict";
     kalendarz();
+    generator();
     podajZmienne();
     ileBylo = ileBylo + 1;
     setTimeout(agregator, predkosc);
@@ -96,7 +102,7 @@ var rozrusznik = function () {
     agregator();
 };
 
-// Jedziemy
+// Gówno
 $(document).ready(function () {
     "use strict";
 });

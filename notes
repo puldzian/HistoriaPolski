@@ -1,44 +1,10 @@
-// ZMIENNE
-var rok = 966,
-    rokkonca = 2017,
-    epoka = 1,
-    kierunek = 1;
-    predkosc = 1000;
-
-// FUNKCJE
-
-// Losuje któryś z n elementów 
-var losujCos = function (n) {
-        return Math.floor(Math.random() * (n));
-    };
-
-var kalendarz = function () {
-    // sprawdź, która epoka? zależnie od epoki dodaj tyle lat
-    if (kierunek == 1) {
-        rok = rok + losujCos(20);
-    } else if (kierunek == 2) {
-        rok = rok - losujCos(20);
-    }
-    // Na granicy przedziału odbij kierunek
-    if (rok > rokkonca) {
-        rok = 2017;
-        kierunek = 2;
-    } else if (rok < 966) {
-        rok = 966;
-        kierunek = 1;
-    }
-}
-    // KONIEC
-}
-
-var glownaPetla = function () {
-    // 0. wygaś scene
-    // 1. przesuń rok, sprawdź epokę i kierunek
-    kalendarz();
-    // 2. zmień status
-    $("#generator").html(rok);
-    $("#jsspeed").html(predkosc);
-    // 4. pokaż status
-    // 9. czekaj określoną ilość czasu
-    setTimeout(glownaPetla, predkosc);
-}
+    miasto: ["Dobryszyce", "Kraków", "Radomsko", "Warszawa"],
+    miastem: ["pod Dobryszycami", "pod Krakowem", "pod Radomskiem", "pod Warszawą"],
+    miescie: ["w Dobryszycach", "w Krakowie", "w Radomsku", "w Warszawie"],
+    rzeka: ["nad Bugiem", "nad Narwią", "nad Notecią", "nad Odrą", "nad Wartą", "nad Wisłą"],
+    imie0k: ["Mieszko", "Ścibor"],
+    nazwa0k: ["z Dobryszyc", "zwany Wilkiem"],
+    imie1k: ["Daniel", "Juliusz"],
+    nazwa1k: ["Płatek", "Palęcki"],
+    imie2k: ["Daniel", "Piotr"],
+    nazwa2k: ["Płatek", "Płucienniczak"]

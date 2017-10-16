@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="author" content="Piotr Puldzian Płucienniczak" />
+    <meta name="description" content="Pętla historii zaciska się." />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="reghipo.css" />
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="regdict.js"></script>
+    <script src="regengine.js"></script>
+    <title>Puldzian - Regeneratywa historia Polskie</title>
+</head>
+
+<body>
+
+    <div id="wydmuszka">
+        <div id="generator">
+            <p><strong>GENERATOR</strong></p>
+            <p id="jsRok">ROK</p>
+            <p id="jsStatus">TXT</p>
+        </div>
+        <div id="kontrolka">
+            <p><strong>KONTROLKA</strong></p>
+            <p>Prędkość: <span id="jsPredkosc">?</span></p>
+            <p><span onclick="wolniej()" id="jsWolniej">WOLNIEJ</span>
+                -- <span onclick="szybciej()" id="jsSzybciej">SZYBCIEJ</span></p>
+            <p>Kierunek: <span id="jsKierunek">?</span></p>
+            <p>Epoka: <span id="jsEpoka">?</span></p>
+            <p>N/Kierunek: <span id="jsSum">?</span></p>
+            <p>Rok końca: <span id="jsEnd">?</span></p>
+        </div>
+        <div id="intro">
+            <p><strong>WPROWADZENIE</strong></p>
+            <p id="starter" onclick="rozrusznik()"><a href="#">START</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

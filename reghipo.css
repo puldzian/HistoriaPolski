@@ -10,7 +10,9 @@ body {
     margin:0 auto;
 }
 #generator, #kontrolka, #intro {
-    margin: 100px auto;
+    height: 120px;
+    margin: 60px auto;
+    overflow: hidden;
     text-align: center;
     width:500px;
 }

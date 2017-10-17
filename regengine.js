@@ -1,14 +1,15 @@
 /*global $, document, gener*/
 var rok = 966,
-    rokkonca = new Date().getFullYear(),
-    epoka = 0, // 0 - 966-1500, 1 - 1500 - 1900, 2 - 1900 - 2000, 3 - 2000+?
+    // rokkonca = new Date().getFullYear(),
+    rokkonca = 1300, // TESTER
+    epoka = 0,
     kierunek = 1, // 1 - do przodu, 2 - do tyłu
     predkosc = 750,
     ileBylo = 0,
     status; // to służy do wypełniania
 
 // Losuje któryś z N elementów
-var losujCos = function (n) {
+var losuj = function (n) {
     "use strict";
     return Math.floor(Math.random() * (n));
 };
@@ -23,7 +24,7 @@ var podajZmienne = function () {
     $("#jsEnd").html(rokkonca);
 };
 
-// Limiter prędkości
+// Ograniczenie prędkości
 var predkosciomierz = function () {
     if (predkosc === 250) {
         document.getElementById("jsSzybciej").style.color="red";
@@ -35,6 +36,7 @@ var predkosciomierz = function () {
     }
 }
 
+// Przycisk WOLNIEJ
 var wolniej = function () {
     if (predkosc != 2000) {
         predkosc = predkosc + 250;
@@ -42,6 +44,7 @@ var wolniej = function () {
     predkosciomierz();
 }
 
+// Przycisk SZYBCIEJ
 var szybciej = function () {
     if (predkosc != 250) {
         predkosc = predkosc - 250;
@@ -57,31 +60,31 @@ var kalendarz = function () {
         // Prymitywizm
         epoka = 0;
         if (kierunek === 1) {
-            rok = rok + losujCos(10);
+            rok = rok + losuj(10);
         } else if (kierunek === 2) {
-            rok = rok - losujCos(10);
+            rok = rok - losuj(10);
         }                           // TU TRZEBA ZMIENIĆ TE LATA na 40
     } else if (rok >= 1200 && rok < 1400) {
         epoka = 1; // Średniowiecze
         if (kierunek === 1) {
-            rok = rok + losujCos(30);
+            rok = rok + losuj(30);
         } else if (kierunek === 2) {
-            rok = rok - losujCos(30);
+            rok = rok - losuj(30);
         }
     } else if (rok >= 1400 && rok < 2000) {
         epoka = 2; // Epoka zastępcza
         if (kierunek === 1) {
-            rok = rok + losujCos(50);
+            rok = rok + losuj(50);
         } else if (kierunek === 2) {
-            rok = rok - losujCos(50);
+            rok = rok - losuj(50);
         }
     } else if (rok >= 2000) {
         // Współczesność
         epoka = 9;
         if (kierunek === 1) {
-            rok = rok + losujCos(10);
+            rok = rok + losuj(10);
         } else if (kierunek === 2) {
-            rok = rok - losujCos(10);
+            rok = rok - losuj(10);
         }
     }
     // Na granicy przedziału odbij kierunek

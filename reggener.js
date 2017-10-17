@@ -39,5 +39,53 @@ var gener = {
             statusik = "Męczeńską śmiercią na ziemiach " + baza.plemienie() + " ginie " + baza.imie0() + " " + baza.nazwisko0() + ".";
         }
         return statusik;
-    }
+    },
+    sredniowieczna: function () {
+        var statusik,
+            wariant = losuj(1);
+        if (wariant === 0) {
+            statusik = "Epoka średniowieczna.";
+        }
+        return statusik;
+    },
+    renesans: function () {
+        var statusik,
+            wariant = losuj(1);
+        if (wariant === 0) {
+            statusik = "Epoka renesansowa.";
+        }
+        return statusik;
+    },
+    barok: function () {
+        var statusik,
+            wariant = losuj(1);
+        if (wariant === 0) {
+            statusik = "Epoka barokowa.";
+        }
+        return statusik;
+    },
+    rozbiory: function () {
+        var statusik,
+            wariant = losuj(1);
+        if (wariant === 0) {
+            statusik = "Epoka rozbiorowa.";
+        }
+        return statusik;
+    },
+    dwudziesty: function () {
+        var statusik,
+            wariant = losuj(1);
+        if (wariant === 0) {
+            statusik = "Epoka dwudziestowieczna.";
+        }
+        return statusik;
+    },
+    dzisiaj: function () {
+        var statusik,
+            wariant = losuj(1);
+        if (wariant === 0) {
+            statusik = "Epoka dzisiajowa.";
+        }
+        return statusik;
+    },
 };

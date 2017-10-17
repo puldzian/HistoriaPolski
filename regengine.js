@@ -57,30 +57,49 @@ var kalendarz = function () {
     "use strict";
     // Ustanów epokę
     if (rok < 1200) {
-        // Prymitywizm
-        epoka = 0;
+        epoka = 0; // Prymitywizm
         if (kierunek === 1) {
-            rok = rok + losuj(10);
+            rok = rok + losuj(40);
         } else if (kierunek === 2) {
-            rok = rok - losuj(10);
-        }                           // TU TRZEBA ZMIENIĆ TE LATA na 40
+            rok = rok - losuj(40);
+        }
     } else if (rok >= 1200 && rok < 1400) {
         epoka = 1; // Średniowiecze
         if (kierunek === 1) {
-            rok = rok + losuj(30);
+            rok = rok + losuj(40);
         } else if (kierunek === 2) {
-            rok = rok - losuj(30);
+            rok = rok - losuj(40);
         }
-    } else if (rok >= 1400 && rok < 2000) {
-        epoka = 2; // Epoka zastępcza
+    } else if (rok >= 1400 && rok < 1600) {
+        epoka = 2; // Renesans
         if (kierunek === 1) {
             rok = rok + losuj(50);
         } else if (kierunek === 2) {
             rok = rok - losuj(50);
         }
-    } else if (rok >= 2000) {
-        // Współczesność
-        epoka = 9;
+    } else if (rok >= 1600 && rok < 1800) {
+        epoka = 3; // Barok
+        if (kierunek === 1) {
+            rok = rok + losuj(50);
+        } else if (kierunek === 2) {
+            rok = rok - losuj(50);
+        }
+    } else if (rok >= 1800 && rok < 1900) {
+        epoka = 4; // Rozbiory
+        if (kierunek === 1) {
+            rok = rok + losuj(50);
+        } else if (kierunek === 2) {
+            rok = rok - losuj(50);
+        }
+    } else if (rok >= 1900 && rok < 1990) {
+        epoka = 5; // Dwudzisty
+        if (kierunek === 1) {
+            rok = rok + losuj(50);
+        } else if (kierunek === 2) {
+            rok = rok - losuj(50);
+        }
+    } else if (rok >= 1990) {
+        epoka = 6; // Współczesność
         if (kierunek === 1) {
             rok = rok + losuj(10);
         } else if (kierunek === 2) {
@@ -105,8 +124,20 @@ var generator = function () {
     if (epoka === 0) {
         // status = "Generuj prymitywną";
         status = gener.prymitywna();
+    } else if (epoka === 1) {
+        status = gener.sredniowieczna();
+    } else if (epoka === 2) {
+        status = gener.renesans();
+    } else if (epoka === 3) {
+        status = gener.barok();
+    } else if (epoka === 4) {
+        status = gener.rozbiory();
+    } else if (epoka === 5) {
+        status = gener.dwudziesty();
+    } else if (epoka === 6) {
+        status = gener.dzisiaj();
     } else {
-        status = "Epoka inna."
+        status = "Znajdujemy się poza czasem!"
     }
     $("#jsStatus").html(status);
 }

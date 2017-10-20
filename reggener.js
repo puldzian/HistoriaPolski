@@ -82,9 +82,17 @@ var gener = {
     },
     dzisiaj: function () {
         var statusik,
-            wariant = losuj(1);
+            wariant = losuj(5);
         if (wariant === 0) {
-            statusik = "Epoka dzisiajowa.";
+            statusik = "Epoka dzisiajowa (6).";
+        } else if (wariant === 1) {
+            statusik = baza.afera() + " w czasie prywatyzacji " + baza.spolka() + ".";
+        } else if (wariant === 2) {
+            statusik = "Upadek zakładów " + baza.spolka() + ".";
+        } else if (wariant === 3) {
+            statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynku6() + " w " + baza.miescie() + ".";
+        } else if (wariant === 4) {
+            statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynkusakr0() + " w " + baza.miescie() + ".";
         }
         return statusik;
     },

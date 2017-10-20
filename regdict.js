@@ -2,6 +2,11 @@
 
 // Wyrzutnia słów do generatorów
 var baza = {
+    afera: function () {
+        var slowo = ["afera", "skandal", "skandal korupcyjny", "afera korupcyjna", "skandal polityczny", "matactwo"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
     atakujo0: function () {
         var slowo = ["atakują", "najeżdżają", "rabują", "podpalają", "okupują", "najeżdżają na", "spadają watahą na"],
             numer = losuj(slowo.length);
@@ -13,7 +18,22 @@ var baza = {
         return slowo[numer];
     },
     budynku0: function () {
-        var slowo = ["zamku", "wieży strażniczej", "fortecy", "palisady", "murów obronnych", "murów miejskich", "hal kupieckich", "fosy", "barbakanu", "zamczyska", "zamku ksiażęcego", "warowni"],
+        var slowo = ["zamku", "wieży strażniczej", "fortecy", "palisady", "murów obronnych", "murów miejskich", "hal kupieckich", "fosy", "barbakanu", "zamczyska", "zamku ksiażęcego", "warowni", "młyna", "huty żelaza", "folwarku", "mostu", "wilczych dołów", "targowiska"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
+    budynku4: function () {
+        var slowo = ["stacji kolei żelaznej", "hal kupieckich", "wodociągów", "filtrów wodnych", "linii tramwajowej", "gazowni", "oświetlenia ulicznego", "pawilonów rzemieślniczych", "hali kupieckiej", "kolonii robotniczej", "budynku poczty i telegrafu", "wieży ciśnień", "akademii wojskowej", "garnizonu", "kanalizacji", "przędzalni", "kopalni węgla", "szkoły dla dziewcząt", "łaźni publicznej"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
+    budynku5: function () {
+        var slowo = ["kombinatu petrochemicznego", "obwodnicy kolejowej", "huty stali", "kopalni żelaza", "elektrociepłowni", "elektrowni", "zakładów azotowych", "fabryki samochodów", "fabryki wagonów", "zakładów meblarskich", "kopalni węgla brunatnego", "kopalni węgla kamiennego", "kopalni siarki", "instytutu badawczego", "szkoły technicznej", "wyższej szkoły zawodowej", "nowego osiedla mieszkalnego", "linii tramwajowej", "biurowca administracji państwowej", "stacji benzynowej", "sklepu samoobsługowego", "rozgłośni radiowej", "lokalnego ośrodka telewizyjnego"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
+    budynku6: function () {
+        var slowo = ["drapacza chmur", "biurowca", "specjalnej strefy ekonomicznej", "zabytkowego pałacyku", "centrum logistycznego", "galerii handlowej", "supermarketu", "obwodnicy", "drugiej obwodnicy", "trzeciej obwodnicy", "linii metra", "centrum handlowo-usługowego", "centrum konferencyjnego", "stadionu", "aquaparku", "multipleksu", "centrum rozrywkowo-usługowego", "siedziby ZUS", "oczyszczalni ścieków", "stacji benzynowej"],
             numer = losuj(slowo.length);
         return slowo[numer];
     },
@@ -24,6 +44,26 @@ var baza = {
     },
     imie0: function () {
         var slowo = ["Bogusław", "Bogumił", "Bogusz", "Chwalibóg", "Czesław", "Częstoch", "Dobromir", "Domagoj", "Dobrowoj", "Jarosław", "Jaromir", "Kazimir", "Komor", "Krupa", "Nadziej", "Lubomir", "Macław", "Masław", "Mirosław", "Mieszko", "Miron", "Puldziok", "Racibor", "Rasław", "Radosław", "Rus", "Ścibor", "Sieciech", "Sulim", "Wacław", "Wojmir", "Wojciech", "Włodzisław", "Włodzimir", "Zawisza", "Zbigniew", "Ziemowit", "Częstowoj", "Ciesław", "Długomił", "Dobrogniew", "Falibog", "Gardomir", "Izasław", "Jaropełk", "Krzywosąd", "Lech", "Leszek", "Lubomir", "Małomir", "Miłosz", "Mojmir", "Mirmił", "Kajko", "Kokosz", "Nawoj", "Niebor", "Niezamysł", "Odolan", "Pomścibor", "Przemysł", "Przybor", "Radogost", "Rosław", "Sambor", "Siemierz", "Sławobor", "Sobiesław", "Świeciech", "Tęgomir", "Twardosław", "Ubysław", "Wacław", "Wiesław", "Wilkomir", "Wszebor", "Wszemysł", "Zadar", "Zdzierad", "Żegota", "Żelibor"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
+    imie5m: function () {
+        var slowo = ["Edward", "Henryk", "Mieczysław", "Władysław", "Zdzisław", "Zbigniew", "Radosław", "Bartłomiej", "Edmund", "Wiesław", "Bolesław", "Anatol", "Lech", "Lesław", "Mieczysław", "Roch", "Józef", "Bartosz", "Jędrzej", "Sobiesław", "Jarosław", "Janusz", "Andrzej", "Wacław", "Jan", "Zygmunt", "Krzysztof", "Erwin", "Teofil", "Czesław", "Hieronim", "Jerzy"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
+    imie5k: function () {
+        var slowo = ["Halina", "Helena", "Teresa", "Zdzisława", "Wiesława", "Henryka", "Genowefa", "Eulalia", "Honorata", "Jolanta", "Józefa", "Janina", "Małgorzata", "Magdalena", "Urszula", "Bogusława", "Bogna"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
+    imie6m: function () {
+        var slowo = ["Piotr", "Andrzej", "Tomasz", "Leszek", "Łukasz", "Maciej", "Marek", "Henryk", "Mateusz", "Krzysztof", "Daniel", "Wojciech", "Paweł", "Artur", "Patryk", "Dominik", "Marcin", "Kajetan", "Adam", "Błażej", "Jan", "Janusz", "Donald", "Jarosław", "Jacek", "Bartosz", "Jakub", "Karol", "Miłosz"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
+    imie6k: function () {
+        var slowo = ["Alicja", "Anna", "Magda", "Zofia", "Lidia", "Aleksandra", "Beata", "Karolina", "Justyna", "Małgorzata", "Joanna", "Katarzyna"],
             numer = losuj(slowo.length);
         return slowo[numer];
     },
@@ -67,6 +107,16 @@ var baza = {
             numer = losuj(slowo.length);
         return slowo[numer];
     },
+    nazwisko5m: function () {
+        var slowo = ["Bierut", "Gomułka", "Giertych", "Gierek", "Berman", "Wałęsa", "Moczar", "Glemp", "Szechter", "Michnik", "Szczerek", "Staff", "Schaff", "Sztompka", "Płatek", "Szydło", "Podgórni", "Onak", "Wierzba", "Pułka", "Stasiuk", "Korwin", "Zawisza", "Ociepka", "Bukwa"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
+    nazwisko6m: function () {
+        var slowo = ["Płucienniczak", "Płatek", "Palęcki", "Balcerowicz", "Wałęsa", "Kwaśniewski", "Kaczyński", "Tusk", "Gronkiewicz-Waltz", "Kaczmarek", "Lewandowski", "Krause", "Kulczyk", "Oleksy", "Miller", "Kowalski", "Nowak", "Matyjaszczyk", "Urban", "Pawlak", "Kalinowski", "Zasada", "Sobczyk", "Zandberg", "Zawisza", "Szydło", "Olechowski", "Płażyński", "Korwin-Mikke", "Wilk", "Petru", "Gomułka", "Giertych", "Wyszyński", "Michnik", "Wojewódzki", "Konieczny", "Olszewski", "Grochowski", "Choromański", "Świetlicki"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
     papiez: function () {
         var slowo = ["Agapit", "Aleksander", "Anastazy", "Benedykt", "Bonifacy", "Celestyn", "Damazy", "Eugeniusz", "Feliks", "Gelazjusz", "Grzegorz", "Hadrian", "Honoriusz", "Innocenty", "Jan Paweł", "Jan", "Juliusz", "Kalikst", "Klemens", "Leon", "Lucjusz", "Marcelin", "Marcin", "Maryn", "Mikołaj", "Paweł", "Pelagiusz", "Pius", "Sergiusz", "Stefan", "Sykstus", "Sylwester", "Teodor", "Urban", "Wiktor"],
             numer = losuj(slowo.length),
@@ -95,6 +145,11 @@ var baza = {
     },
     rzeko: function () {
         var slowa = ["Wisłą", "Odrą", "Bałtykiem", "Niemnem", "Dunajem", "Dniestrem", "Łabą", "Wartą", "Bugiem", "Narwią", "Sanem", "Notecią", "Pilicą", "Wieprzem", "Dunajcem", "Bobrem", "Łyną", "Nysą Łużycką", "Wkrą", "Brdą", "Prosną", "Drwęcą", "Wisłokiem", "Wdą", "Drawą", "Nysą Kłodzką", "Popradem", "Pasłęką", "Regą", "Bzurą", "Wisłoką", "Obrą", "Legą", "Biebrzą", "Nidą"],
+            numerek = losuj(slowa.length);
+        return slowa[numerek];
+    },
+    spolka: function () {
+        var slowa = ["PZU", "Fameg", "Stomil", "Polfa", "Jelfa", "WBK", "BGŻ", "SKOK", "Romet", "FSO", "FSM", "Star", "Jelcz", "MZK", "MPK", "PKP", "WKD", "SKM", "TP", "KWK Bełchatów", "GOP", "COP", "Bielbaw"],
             numerek = losuj(slowa.length);
         return slowa[numerek];
     },

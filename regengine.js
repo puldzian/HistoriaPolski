@@ -1,7 +1,7 @@
 /*global $, document, gener*/
-var rok = 966,
+var rok = 2000,
     // rokkonca = new Date().getFullYear(),
-    rokkonca = 1300, // TESTER
+    rokkonca = 2017, // TESTER
     epoka = 0,
     kierunek = 1, // 1 - do przodu, 2 - do tyłu
     predkosc = 750,
@@ -38,7 +38,7 @@ var predkosciomierz = function () {
 
 // Przycisk WOLNIEJ
 var wolniej = function () {
-    if (predkosc != 2000) {
+    if (predkosc != 2500) {
         predkosc = predkosc + 250;
     }
     predkosciomierz();

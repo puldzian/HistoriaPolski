@@ -46,6 +46,11 @@ var baza = {
             numer = losuj(slowo.length);
         return slowo[numer];
     },
+    dziedzinie: function () {
+        var slowo = ["ekonomii", "socjologii", "językoznawstwa", "chemii", "fizyki", "astrofizyki", "kosmologii", "medycyny", "antropologii", "matematyki", "informatyki", "filozofii", "religioznawstwa", "chemii organicznej", "chemii nieorganicznej", "inżynierii lądowej", "ekonometrii", "literatury", "muzyki", "sztuk wizualnych", "gramatyki opisowej"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
     imie0: function () {
         var slowo = ["Bogusław", "Bogumił", "Bogusz", "Chwalibóg", "Czesław", "Częstoch", "Dobromir", "Domagoj", "Dobrowoj", "Jarosław", "Jaromir", "Kazimir", "Komor", "Krupa", "Nadziej", "Lubomir", "Macław", "Masław", "Mirosław", "Mieszko", "Miron", "Puldziok", "Racibor", "Rasław", "Radosław", "Rus", "Ścibor", "Sieciech", "Sulim", "Wacław", "Wojmir", "Wojciech", "Włodzisław", "Włodzimir", "Zawisza", "Zbigniew", "Ziemowit", "Częstowoj", "Ciesław", "Długomił", "Dobrogniew", "Falibog", "Gardomir", "Izasław", "Jaropełk", "Krzywosąd", "Lech", "Leszek", "Lubomir", "Małomir", "Miłosz", "Mojmir", "Mirmił", "Kajko", "Kokosz", "Nawoj", "Niebor", "Niezamysł", "Odolan", "Pomścibor", "Przemysł", "Przybor", "Radogost", "Rosław", "Sambor", "Siemierz", "Sławobor", "Sobiesław", "Świeciech", "Tęgomir", "Twardosław", "Ubysław", "Wacław", "Wiesław", "Wilkomir", "Wszebor", "Wszemysł", "Zadar", "Zdzierad", "Żegota", "Żelibor"],
             numer = losuj(slowo.length);
@@ -86,6 +91,11 @@ var baza = {
             numer = losuj(slowo.length);
         return slowo[numer];
     },
+    kraju6: function () {
+        var slowo = ["Białorusi", "Słowacji", "Węgrzech", "Czechach", "Niemczech", "Szwecji", "Norwegii", "Rosji", "Ukrainie", "Rumunii", "Bułgarii", "Turcji", "Grecji", "Francji", "Wielkiej Brytanii", "Hiszpanii", "Portugalii", "Austrii", "Australii", "Chinach", "Zairze", "Kongo", "Sudanie", "Jemenie", "Palestynie", "Afganistanie", "Iraku", "Libii", "Egipcie", "Japonii", "Korei", "Maroku", "Zimbabwe", "Tajlandii", "Brazylii", "Meksyku", "Panamie", "Nikaragui", "Ekwadorze", "Boliwii", "Iranie"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
     mialmiejsce: function () {
         var slowo = ["miał miejsce", "odbył się", "zorganizowano"],
             numer = losuj(slowo.length);
@@ -116,8 +126,28 @@ var baza = {
             numer = losuj(slowo.length);
         return slowo[numer];
     },
+    nazwisko6k: function () {
+        var slowo = ["Płucienniczak", "Płatek", "Palęcka", "Balcerowicz", "Wałęsa", "Kwaśniewska", "Kaczyńska", "Bochniarz", "Gronkiewicz-Waltz", "Kaczmarek", "Lewandowska", "Krause", "Kulczyk", "Oleksy", "Miller", "Kowalska", "Nowak", "Matyjaszczyk", "Urban", "Pawlak", "Kalinowska", "Zasada", "Sobczyk", "Zandberg", "Zawisza", "Szydło", "Olechowska", "Płażyńska", "Korwin-Mikke", "Wilk", "Petru", "Gomułka", "Giertych", "Wyszyńska", "Michnik", "Wojewódzka", "Konieczna", "Olszewska", "Grochowska", "Choromańska", "Świetlicka"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
     nazwisko6m: function () {
         var slowo = ["Płucienniczak", "Płatek", "Palęcki", "Balcerowicz", "Wałęsa", "Kwaśniewski", "Kaczyński", "Tusk", "Gronkiewicz-Waltz", "Kaczmarek", "Lewandowski", "Krause", "Kulczyk", "Oleksy", "Miller", "Kowalski", "Nowak", "Matyjaszczyk", "Urban", "Pawlak", "Kalinowski", "Zasada", "Sobczyk", "Zandberg", "Zawisza", "Szydło", "Olechowski", "Płażyński", "Korwin-Mikke", "Wilk", "Petru", "Gomułka", "Giertych", "Wyszyński", "Michnik", "Wojewódzki", "Konieczny", "Olszewski", "Grochowski", "Choromański", "Świetlicki"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
+    nazwiska6m: function () {
+        var slowo = ["Płucienniczaka", "Płatka", "Palęckiego", "Balcerowicza", "Wałęsy", "Kwaśniewskiego", "Kaczyńskiego", "Tuska", "Kaczmarka", "Lewandowskiego", "Krausego", "Kulczyka", "Oleksego", "Millera", "Kowalski", "Nowak", "Matyjaszczyk", "Urban", "Pawlak", "Kalinowski", "Zasada", "Sobczyk", "Zandberg", "Zawiszy", "Małysy", "Olechowskiego", "Płażyńskiego", "Korwin-Mikkego", "Wilka", "Petru", "Gomułki", "Giertycha", "Wyszyńskiego", "Michnika", "Wojewódzkiego", "Koniecznego", "Olszewskiego", "Grochowskiego", "Choromańskiego", "Świetlickiego", "Sendeckiego", "Barana"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
+    organizacja: function () {
+        var slowo = ["ONZ", "Unii Europejskiej", "NATO", "WHO", "UNESCO", "WTO", "OPEC", "Grupy Wyszehradzkiej", "RWPG", "EWWS", "WNP", "ZSSR", "ASEAN", "AU", "LPA", "APEC", "Amerykańskiego Towarzystwa Optycznego", "Euroazjatyckiej Organizacji Patentowej", "G7", "G8", "BRICS", "Interpolu", "Klubu Paryskiego", "SPARTECA", "SPIE", "TED", "ZRiB"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
+    operacji: function () {
+        var slowo = ["misji pokojowej", "operacji rozbrojeniowej", "misji stabilizacyjnej", "misji pacyfikacyjnej", "zbrojnej demokratyzacji", "dekolonizacji", "kolonizacji", "imperialnej okupacji", "powstaniu narodowym", "misji ratowania zakładników", "tajnej operacji wojskowej", "manewrach wojskowych", "ćwiczeniach wojskowych"],
             numer = losuj(slowo.length);
         return slowo[numer];
     },
@@ -127,6 +157,11 @@ var baza = {
             kolejka = losuj(5) + 1;
         return slowo[numer] + " " + romanize(kolejka);
     },
+    partiaczlon: function () {
+        var slowo = ["Prawo", "Sprawiedliwość", "Uczciwość", "Praworządność", "Niezłomność", "Poprawność", "Obywatelskość", "Poprawność", "Zgoda", "Wolność", "Dobrobyt", "Polskość", "Chrześcijaństwo", "Narodowość", "Honor", "Ludowość", "Wiara", "Bogactwo", "Wspólnota", "Tożsamość", "Jakość", "Niskie Podatki", "Polska", "Wierność", "Siła", "Samoobrona", "Polityka Realna", "Lewica", "Demokracja", "Republika", "Piwo"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
+    },
     plemie: function () {
         var slowa = ["Prusowie", "Węgrzy", "Wiślanie", "Ślężanie", "Jaćwingowie", "Polanie", "Gołęszanie", "Mazowszanie", "Lubuszanie", "Kaszubi", "Wolinianie", "Pyrzyczanie", "Obrzanie", "Bobrzanie", "Dziadoszanie", "Litwini", "Lędzianie", "Goplanie", "Wandale", "Czesi", "Chorwaci", "Rusini", "Dregowicze", "Wieluńczanie", "Wieleci", "Niemcy", "Sasowie", "Juci", "Danowie", "Żmudzini", "Eskimosi", "Wikingowie", "Rurykowicze"],
             numerek = losuj(slowa.length);
@@ -134,6 +169,16 @@ var baza = {
     },
     plemienie: function () {
         var slowa = ["Prusów", "Węgrów", "Wiślan", "Ślężan", "Jaćwingów", "Polan", "Gołęszan", "Mazowszan", "Lubuszan", "Kaszubów", "Wolinian", "Pyrzyczan", "Obrzan", "Bobrzan", "Dziadoszan", "Litwinów", "Lędzian", "Goplan", "Wandali", "Czechów", "Chorwatów", "Rusinów", "Dregowiczów", "Wieluńczan", "Wieletów", "Niemców", "Sasów", "Jutów", "Danów", "Żmudzinów", "Eskimosów", "Wikingów", "Rurykowiczów", "Ściskopęków", "pogan", "bałwochwalców", "Słowaków", "pogańskie plemiona"],
+            numerek = losuj(slowa.length);
+        return slowa[numerek];
+    },
+    politycznej: function () {
+        var slowa = ["Komunistycznej", "Socjaldemokratycznej", "Socjalistycznej", "Demokratycznej", "Liberalnej", "Republikańskiej", "Autorytarnej", "Konserwatywnej", "Rewolucyjnej", "Nacjonalistycznej", "Libertariańskiej", "Narodowo-Rozwojowej"],
+            numerek = losuj(slowa.length);
+        return slowa[numerek];
+    },
+    przewodniczacym: function () {
+        var slowa = ["przewodniczącym", "pierwszym sekretarzem", "prezydentem", "prezesem", "kierownikiem"],
             numerek = losuj(slowa.length);
         return slowa[numerek];
     },
@@ -156,6 +201,11 @@ var baza = {
         var slowa = ["PZU", "Fameg", "Stomil", "Polfa", "Jelfa", "WBK", "BGŻ", "SKOK", "Romet", "FSO", "FSM", "Star", "Jelcz", "MZK", "MPK", "PKP", "WKD", "SKM", "TP", "KWK Bełchatów", "GOP", "COP", "Bielbaw"],
             numerek = losuj(slowa.length);
         return slowa[numerek];
+    },
+    sejm: function () {
+        var slowo = ["Sejm", "parlament", "pałac prezydencki", "senat", "Belweder", "siedzibę partii", "siedzibę rządu", "kancelarię premiera", "episkopat"],
+            numer = losuj(slowo.length);
+        return slowo[numer];
     },
     startkoniec: function () {
         var slowo = ["początek", "rozpoczęcie", "koniec", "zakończenie", "ukończenie", "wstrzymanie", "zatrzymanie"],

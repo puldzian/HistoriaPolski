@@ -4,7 +4,7 @@
 var gener = {
     prymitywna: function () {
         var statusik,
-            wariant = losuj(14);
+            wariant = losuj(16);
         if (wariant === 0) {
             statusik = "W " + baza.miescie() + " urodził się " + baza.imie0() + " " + baza.nazwisko0() + ", przyszły papież " + baza.papiez() + ".";
         } else if (wariant === 1) {
@@ -39,8 +39,11 @@ var gener = {
         } else if (wariant === 14) {
             statusik = baza.imie0() + " " + baza.nazwisko0() + " " + baza.wyrusza() + " " + baza.plemienie() + ".";
             mapuj(1);
-        } else if (wariant === 13) {
+        } else if (wariant === 15) {
             statusik = "Męczeńską śmiercią na ziemiach " + baza.plemienie() + " ginie " + baza.imie0() + " " + baza.nazwisko0() + ".";
+        } else if (wariant === 16) {
+            statusik = baza.imie0() + " " + baza.nazwisko0() + " " + baza.wyrusza() + " " + baza.plemienie() + " i zwycięża.";
+            mapuj(1);
         }
         return statusik;
     },
@@ -78,9 +81,11 @@ var gener = {
     },
     dwudziesty: function () {
         var statusik,
-            wariant = losuj(1);
+            wariant = losuj(2);
         if (wariant === 0) {
-            statusik = "Epoka dwudziestowieczna.";
+            statusik = baza.przewodniczacym() + " Partii " + baza.politycznej() + " zostaje " + baza.imie5m() + " " + baza.nazwisko5m() + ".";
+        } else if (wariant === 1) {
+            statusik = "Posłowie Partii " + baza.politycznej() + " okupują " + baza.sejm() + ".";
         }
         return statusik;
     },
@@ -88,7 +93,7 @@ var gener = {
         var statusik,
             wariant = losuj(5);
         if (wariant === 0) {
-            statusik = "Epoka dzisiajowa (6).";
+            statusik = baza.startkoniec(); + " planu " + baza.nazwiska6m + ". ";
         } else if (wariant === 1) {
             statusik = baza.afera() + " w czasie prywatyzacji " + baza.spolka() + ".";
         } else if (wariant === 2) {
@@ -97,6 +102,22 @@ var gener = {
             statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynku6() + " w " + baza.miescie() + ".";
         } else if (wariant === 4) {
             statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynkusakr0() + " w " + baza.miescie() + ".";
+        } else if (wariant === 5) {
+            statusik = "Wybory parlamentarne wygrywa partia " + baza.partiaczlon() + " i " + baza.partiaczlon() + ".";
+        } else if (wariant === 6) {
+            statusik = "Prezydentem zostaje " + baza.imie6m() + " " + baza.nazwisko6m() + " (" + baza.partiaczlon() + " i " + baza.partiaczlon() + ").";
+        } else if (wariant === 7) {
+            statusik = baza.imie6k() + " " + baza.nazwisko6k() + " (" + baza.partiaczlon() + " i " + baza.partiaczlon() + ") zostaje prezydentem.";
+        } else if (wariant === 8) {
+            statusik = "Referendum w sprawie przystąpienia Polski do " + baza.organizacja();
+        } else if (wariant === 9) {
+            statusik = "Polska przystępuje do " + baza.organizacja();
+        } else if (wariant === 10) {
+            statusik = "Nagrodę Nobla w dziedzinie " + baza.dziedzinie() + " otrzymuje " + baza.imie6k() + " " + baza.nazwisko6k() + ".";
+        } else if (wariant === 11) {
+            statusik = "Nagrodę Nobla w dziedzinie " + baza.dziedzinie() + " otrzymuje " + baza.imie6m() + " " + baza.nazwisko6m() + ".";
+        } else if (wariant === 12) {
+            statusik = "Polscy żołnierze biorą udział w " + baza.operacji() + " w " + baza.kraju6() + ".";
         }
         return statusik;
     },

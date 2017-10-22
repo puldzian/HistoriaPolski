@@ -1,10 +1,10 @@
-/*global $, losuj, baza*/
+/*global $, losuj, baza, mapuj*/
 
 //Główny proces generacyjny
 var gener = {
     prymitywna: function () {
         var statusik,
-            wariant = losuj(15);
+            wariant = losuj(14);
         if (wariant === 0) {
             statusik = "W " + baza.miescie() + " urodził się " + baza.imie0() + " " + baza.nazwisko0() + ", przyszły papież " + baza.papiez() + ".";
         } else if (wariant === 1) {
@@ -27,14 +27,18 @@ var gener = {
             statusik = "W " + baza.miescie() + " " + baza.urozmarl() + " " + baza.imie0() + " " + baza.nazwisko0() + ".";
         } else if (wariant === 10) {
             statusik = baza.plemie() + " " + baza.atakujo0() + " " + baza.miastoe() + ".";
+            mapuj(0);
         } else if (wariant === 11) {
             statusik = baza.plemie() + " " + baza.atakujo0() + " " + baza.kraine() + ".";
+            mapuj(0);
         } else if (wariant === 12) {
             statusik = baza.plemie() + " " + baza.atakujo0() + " " + baza.kraine() + ", w " + baza.bitwie() + " " + baza.zwycieza() + " ich " + baza.imie0() + " " + baza.nazwisko0() + ".";
         } else if (wariant === 13) {
             statusik = baza.imie0() + " " + baza.nazwisko0() + " " + baza.wyrusza() + " " + baza.plemienie() + ".";
+            mapuj(1);
         } else if (wariant === 14) {
             statusik = baza.imie0() + " " + baza.nazwisko0() + " " + baza.wyrusza() + " " + baza.plemienie() + ".";
+            mapuj(1);
         } else if (wariant === 13) {
             statusik = "Męczeńską śmiercią na ziemiach " + baza.plemienie() + " ginie " + baza.imie0() + " " + baza.nazwisko0() + ".";
         }

@@ -1,5 +1,5 @@
-/*global $, document, gener*/
-var rok = 2000,
+/*global $, document, gener, mapa*/
+var rok = 966,
     // rokkonca = new Date().getFullYear(),
     rokkonca = 2017, // TESTER
     epoka = 0,
@@ -14,15 +14,41 @@ var losuj = function (n) {
     return Math.floor(Math.random() * (n));
 };
 
-// Podaj zmiene do kontrolki
-var podajZmienne = function () {
-    "use strict";
-    $("#jsPredkosc").html(predkosc);
-    $("#jsKierunek").html(kierunek);
-    $("#jsEpoka").html(epoka);
-    $("#jsSum").html(ileBylo);
-    $("#jsEnd").html(rokkonca);
+var mapa = [
+    [[0],[1],[1],[0]],
+    [[0],[1],[1],[0]],
+    [[0],[1],[1],[0]]
+]
+
+var mapuj = function (kierunek) {
+    var x = losuj(4);
+    var y = losuj(3);
+    /*
+    var iluSasiadow;
+    if (mapa[y-1][x] === 1 ) {
+        iluSasiadow = iluSasiadow + 1;
+    }
+    if (mapa[y+1][x] === 1) {
+        iluSasiadow = iluSasiadow + 1;
+    }
+    if (mapa[y][x-1] === 1) {
+        iluSasiadow = iluSasiadow + 1;
+    }
+    if (mapa[y][x+1] === 1) {
+        iluSasiadow = iluSasiadow + 1;
+    }
+
+    if (iluSasiadow < 2 && kierunek === 0) {
+    mapa[y][x] = kierunek;
+    }
+    */
+    mapa[y][x] = kierunek;
 };
+
+// no i tu trzeba dorobić, żeby to pojawiały i znikały obrazki,
+// a nie jakaś matryca czy coś
+
+// PRZYDAŁOBY SIĘ dbać o ciągłość terytorium - ale to ewntualnie na koniec
 
 // Ograniczenie prędkości
 var predkosciomierz = function () {
@@ -120,6 +146,7 @@ var kalendarz = function () {
     // Koniec kalendarza
 };
 
+// Maszyna wyrzuca status adekwatny do epoki
 var generator = function () {
     if (epoka === 0) {
         // status = "Generuj prymitywną";
@@ -143,6 +170,29 @@ var generator = function () {
 }
 
 // SKRYPTY SYSTEMOWE
+
+// Podaj zmiene do kontrolki
+var podajZmienne = function () {
+    "use strict";
+    $("#jsPredkosc").html(predkosc);
+    $("#jsKierunek").html(kierunek);
+    $("#jsEpoka").html(epoka);
+    $("#jsSum").html(ileBylo);
+    $("#jsEnd").html(rokkonca);
+    // Podgląd terytorium
+    $("#m00").html(mapa[0][0]);
+    $("#m01").html(mapa[0][1]);
+    $("#m02").html(mapa[0][2]);
+    $("#m03").html(mapa[0][3]);
+    $("#m10").html(mapa[1][0]);
+    $("#m11").html(mapa[1][1]);
+    $("#m12").html(mapa[1][2]);
+    $("#m13").html(mapa[1][3]);
+    $("#m20").html(mapa[2][0]);
+    $("#m21").html(mapa[2][1]);
+    $("#m22").html(mapa[2][2]);
+    $("#m23").html(mapa[2][3]);
+};
 
 // Agregator treści i wypełniacz
 var agregator = function () {

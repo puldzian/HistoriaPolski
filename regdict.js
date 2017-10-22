@@ -1,5 +1,9 @@
 /*global $, losuj, romanize */
 
+// Można było zrobić tak, że jest baza z arrayami i osobna funkcja,
+// która z nich wyciąga. Tak powinno być. Ale jest tak, że każdy
+// array wyrzuca po swojemu. Działa, więc nie ma co marudzić.
+
 // Wyrzutnia słów do generatorów
 var baza = {
     afera: function () {

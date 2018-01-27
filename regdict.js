@@ -222,6 +222,21 @@ var baza = {
             numerek = losuj(slowa.length);
         return slowa[numerek];
     },
+    wielka: function () {
+        var slowa = ["Wielka", "Ogromna", "Tytaniczna", "Gargantuiczna", "Wielka"],
+            numerek = losuj(slowa.length);
+        return slowa[numerek];
+    },
+    orkiestra: function () {
+        var slowa = ["Orkiestra", "Kapela", "Filharmonia", "Symfonia", "Harmonia"],
+            numerek = losuj(slowa.length);
+        return slowa[numerek];
+    },
+    swiatecznej: function () {
+        var slowa = ["Świątecznej", "Noworocznej", "Wiosennej", "Jesiennej", "Letniej", "Zimowej", "Wielkopostnej", "Urodzinowej", "Imieninowej"],
+            numerek = losuj(slowa.length);
+        return slowa[numerek];
+    },
     wyrusza: function () {
         var slowa = ["wyrusza na", "zwycięża w boju", "organizuje najazd na", "napada na", "podbija", "chrystianizuje", "najeżdża na", "zdobywa ziemie", "organizuje wyprawę na"],
             numerek = losuj(slowa.length);

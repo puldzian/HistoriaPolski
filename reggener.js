@@ -4,7 +4,7 @@
 var gener = {
     prymitywna: function () {
         var statusik,
-            wariant = losuj(16);
+            wariant = losuj(17);
         if (wariant === 0) {
             statusik = "W " + baza.miescie() + " urodził się " + baza.imie0() + " " + baza.nazwisko0() + ", przyszły papież " + baza.papiez() + ".";
         } else if (wariant === 1) {
@@ -51,32 +51,42 @@ var gener = {
         var statusik,
             wariant = losuj(1);
         if (wariant === 0) {
-            statusik = "Epoka średniowieczna.";
+            statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynkusakr0() + " pod wezwaniem " + baza.swietej() + " w " + baza.miescie() + ".";
+        } else if (wariant === 1) {
+            statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynkusakr0() + " w " + baza.miescie() + ".";
         }
         return statusik;
     },
     renesans: function () {
         var statusik,
             wariant = losuj(1);
-        if (wariant === 0) {
-            statusik = "Epoka renesansowa.";
-        }
+            if (wariant === 0) {
+                statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynkusakr0() + " pod wezwaniem " + baza.swietej() + " w " + baza.miescie() + ".";
+            } else if (wariant === 1) {
+                statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynkusakr0() + " w " + baza.miescie() + ".";
+            }
         return statusik;
     },
     barok: function () {
         var statusik,
             wariant = losuj(1);
-        if (wariant === 0) {
-            statusik = "Epoka barokowa.";
-        }
+            if (wariant === 0) {
+                statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynkusakr0() + " pod wezwaniem " + baza.swietej() + " w " + baza.miescie() + ".";
+            } else if (wariant === 1) {
+                statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynkusakr0() + " w " + baza.miescie() + ".";
+            }
         return statusik;
     },
     rozbiory: function () {
         var statusik,
             wariant = losuj(1);
-        if (wariant === 0) {
-            statusik = "Epoka rozbiorowa.";
-        }
+            if (wariant === 0) {
+                statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynkusakr0() + " pod wezwaniem " + baza.swietej() + " w " + baza.miescie() + ".";
+            } else if (wariant === 1) {
+                statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynkusakr0() + " w " + baza.miescie() + ".";
+            } else if (wariant === 2) {
+                statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynku4() + " w " + baza.miescie() + ".";
+            }
         return statusik;
     },
     dwudziesty: function () {
@@ -86,6 +96,8 @@ var gener = {
             statusik = baza.przewodniczacym() + " Partii " + baza.politycznej() + " zostaje " + baza.imie5m() + " " + baza.nazwisko5m() + ".";
         } else if (wariant === 1) {
             statusik = "Posłowie Partii " + baza.politycznej() + " okupują " + baza.sejm() + ".";
+        } else if (wariant === 2) {
+            statusik = baza.startkoniec() + " " + baza.konstrukcji() + " " + baza.budynku5() + " w " + baza.miescie() + ".";
         }
         return statusik;
     },
@@ -118,6 +130,8 @@ var gener = {
             statusik = "Nagrodę Nobla w dziedzinie " + baza.dziedzinie() + " otrzymuje " + baza.imie6m() + " " + baza.nazwisko6m() + ".";
         } else if (wariant === 12) {
             statusik = "Polscy żołnierze biorą udział w " + baza.operacji() + " w " + baza.kraju6() + ".";
+        } else if (wariant === 13) {
+            statusik = "Odbywa się " + losuj(15) + " edycja " + baza.wielkiej() + " " + baza.orkiestry() + " " + baza.swiatecznej() + " Pomocy.";
         }
         return statusik;
     },

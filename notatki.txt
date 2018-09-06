@@ -1,0 +1,115 @@
+var danyRok = 960
+var daneZdanieTestowe = 'zdanie testowe'
+var rokKonca = 2017 // W tym roku ostatnie wydarzenie: 'Siedzisz przed komputerem'
+var start = 1
+
+
+$.getScript('foreign.js')
+$.getScript('slownik.js')
+
+// Losuje któryś z N elementów
+var losuj = function (n) {
+  return Math.floor(Math.random() * (n))
+}
+
+var wstawZdanie = function () {
+  var status = danyRok + ' – ' + daneZdanieTestowe + '. '
+  poleTekstowe.append(status)
+}
+var dodajRok = function () {
+  if (start === 1) { // Chrzest Polski
+    danyRok = danyRok + losuj(10)
+  } else if (danyRok < 1200) { // Wczesne średniowiecze
+    danyRok = danyRok + losuj(40) + 1
+  } else if (danyRok >= 1200 && danyRok < 1400) { // Późne średniowiecze
+    danyRok = danyRok + losuj(30) + 1
+  } else if (danyRok >= 1400 && danyRok < 1600) { // Renesans
+    danyRok = danyRok + losuj(25) + 1
+  } else if (danyRok >= 1600 && danyRok < 1800) { // Barok
+    danyRok = danyRok + losuj(20) + 1
+  } else if (danyRok >= 1800 && danyRok < 1914) { // Zabory
+    danyRok = danyRok + losuj(15) + 1
+  } else if (danyRok >= 1914 && danyRok < 1946) { // Wojny i międzywojnie
+    danyRok = danyRok + losuj(10) + 1
+  } else if (danyRok >= 1946 && danyRok < 1989) { // Komunizm
+    danyRok = danyRok + losuj(10) + 1
+  } else if (danyRok >= 1989 && danyRok <= rokKonca) { // III RP
+    danyRok = danyRok + losuj(3) + 1
+  }
+}
+
+// Główny silnik przygody
+var petlaGlowna = function () {
+  if (start === 1) {
+    dodajRok() // Po raz pierwszy, żeby pchnąć z miejsca startu
+    generator()
+    start = 0
+    dodajRok()
+  } else if (danyRok <= rokKonca) {
+    wstawZdanie()
+    dodajRok()
+  } else if (danyRok > rokKonca) {
+    return 1 // Koniec
+  }
+  petlaGlowna()
+}
+
+// Odpalenie maszyny
+petlaGlowna()
+
+
+/* global losuj, danyRok,rokKonca, start */
+
+// Plik zawiera słowa używane w generatorach
+// [mianownik, mianowników]
+var baza = {
+  imie1200: function () {
+    var slowo = ['Leszko', 'Mieszko', 'Przedbor']
+    var numer = losuj(slowo.length)
+    return slowo[numer]
+  },
+  plemieniaObcego: function () {
+    var slowo = ['Bułgarów', 'Czechów', 'Rusinów']
+    var numer = losuj(slowo.length)
+    return slowo[numer]
+  },
+  plemieniaWlasnego: function () {
+    var slowo = ['Lędzian', 'Polan', 'Wiślan']
+    var numer = losuj(slowo.length)
+    return slowo[numer]
+  }
+}
+
+// Tutaj zróbmy generatory!
+var pobierzSlowo = function (slowo, odmiana) {
+  var dlugosc = slowo.length
+  var wylosowane = losuj(dlugosc)
+  var slowko = slowo[wylosowane][odmiana]
+  return (slowko)
+}
+
+var generator = function () {
+  var statusik
+  var roczek = '<b>' + danyRok + '</b> - '
+  if (start === 1) { // Chrzest Polski
+    statusik = baza.imie1200() + ', władca ' + baza.plemieniaWlasnego() + ', przyjmuje chrzest od ' + baza.plemieniaObcego
+  } else if (danyRok < 1200) { // Wczesne średniowiecze
+    // Generuj wczesne
+  } else if (danyRok >= 1200 && danyRok < 1400) { // Późne średniowiecze
+    // Generuj późne
+  } else if (danyRok >= 1400 && danyRok < 1600) { // Renesans
+    // Generuj renesans
+  } else if (danyRok >= 1600 && danyRok < 1800) { // Barok
+    // Generuj barok
+  } else if (danyRok >= 1800 && danyRok < 1914) { // Zabory
+    // Generuj zabory
+  } else if (danyRok >= 1914 && danyRok < 1946) { // Wojny i międzywojnie
+    // Generuj wojnie
+  } else if (danyRok >= 1946 && danyRok < 1989) { // Komunizm
+    // Generuj komunizm
+  } else if (danyRok >= 1989 && danyRok <= rokKonca) { // III RP
+    // Generuj IIIRP
+  }
+  var duzyStatus = roczek + statusik + '. '
+  return duzyStatus
+}

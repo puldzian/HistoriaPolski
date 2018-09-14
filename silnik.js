@@ -55,16 +55,27 @@ $(document).ready(function () {
   // Właściwy słownik
   // Użycie: slowo.daj(deklinacja)
   var bitwa = new Slowo([['bitwa', 'bitwy'], ['potyczka', 'potyczki'], ['starcie', 'starcia']])
+<<<<<<< HEAD
   var bunt = new Slowo([['bunt'], ['powstanie']])
+=======
+  var budynekWczesny = new Slowo([['baszta', 'baszty'], ['palisada', 'palisady'], ['wały', 'wałów'], ['wieża', 'wieży'], ['zamek', 'zamku']])
+>>>>>>> c4571b7078a77549b81377a8cb592f4e2e576fc1
   var cesarzWczesny = new Slowo([['Berengar', 'Beregara'], ['Henryk', 'Henryka'], ['Ludwik', 'Ludwika'], ['Otton', 'Ottona']])
   var imieSwietyWczesny = new Slowo([['Cyryl', 'Cyryla'], ['Metody', 'Metodego'], ['Wojciech', 'Wojciecha']])
   var imieWczesne = new Slowo([['Leszko', 'Leszka'], ['Mieszko', 'Mieszka'], ['Przedbor', 'Przedbora']])
   var imieKWczesne = new Slowo([['Bożena', 'Bożenę'], ['Dobrawa', 'Dobrawę'], ['Dobromiła', 'Dobromiłę'], ['Lubomira', 'Lubomirę'], ['Milena', 'Milenę'], ['Mojmira', 'Mojmirę'], ['Rzepicha', 'Rzepichę'], ['Świetlana', 'Świetlanę'], ['Wanda', 'Wandę']])
   var miastoWczesne = new Slowo([['Biskupin', 'Biskupinem', 'Biskupinie'], ['Cedynia', 'Cedynią', 'Cedyni'], ['Płock', 'Płockiem', 'Płocku']])
+<<<<<<< HEAD
   var naMisjiWczesne = new Slowo([['ewangelizując'], ['nawracając'], ['na terytorium'], ['na ziemiach'], ['w trakcie misji pośród'], ['w trakcie misji wśród']])
   var plemieObce = new Slowo([['Bułgarzy', 'Bułgarów', 'bułgarski', 'bułgarską'], ['Czesi', 'Czechów', 'czeski', 'czeską'], ['Litwini', 'Litwinów', 'litewski', 'litewską'], ['Prusi', 'Prusów', 'pruski', 'pruską'], ['Rusini', 'Rusinów', 'ruski', 'ruską']])
   var plemieWlasne = new Slowo([['Dziadoszanie', 'Dziadoszan'], ['Lędzianie', 'Lędzian'], ['Polanie', 'Polan'], ['Wiślanie', 'Wiślan']])
   var poslubil = new Slowo([['poślubił', 'poślubiła'], ['wziął za żonę', 'wzięła za męża']])
+=======
+  var plemieObce = new Slowo([['Bułgarzy', 'Bułgarów'], ['Czesi', 'Czechów'], ['Rusini', 'Rusinów']])
+  var plemieWlasne = new Slowo([['Lędzianie', 'Lędzian'], ['Polanie', 'Polan'], ['Wiślanie', 'Wiślan']])
+  var startuje = new Slowo([['rozpoczął'], ['zaczął']])
+  var startujeSie = new Slowo([['rozpoczęła się'], ['zaczęła się']])
+>>>>>>> c4571b7078a77549b81377a8cb592f4e2e576fc1
   var wizytowal = new Slowo([['gościł u'], ['nawiedził'], ['odwiedził'], ['wizytował']])
   var wladcaWczesny = new Slowo([['kniaź', 'kniazia', 'kniazia'], ['książę', 'księcia', 'księcia'], ['wojewoda', 'wojewody', 'wojewodę']])
   var wladczyniWczesna = new Slowo([['kniaziówna', 'kniaziównę'], ['księżna', 'księżną'], ['księżniczka', 'księżniczkę']])
@@ -77,10 +88,14 @@ $(document).ready(function () {
   // A tutaj wielki generator
   var generator = function () { // eslint-disable-line no-unused-vars
     if (start === 1) { // Generuj chrzest
-      status = imieWczesne.daj(0) + ', władca ' + plemieWlasne.daj(1) + ', przyjmuje chrzest od ' + plemieObce.daj(1)
+      status = imieWczesne.daj(0) + ', władca ' + plemieWlasne.daj(1) + ', przyjął chrzest od ' + plemieObce.daj(1)
       start = 0
     } else if (start === 0 && danyRok < 1200) { // Generuj pierwszą epokę
+<<<<<<< HEAD
       var wariant = losuj(8) // arg = liczba generatorów, ale indeksowane od 0
+=======
+      var wariant = losuj(6) // arg = liczba generatorów, ale indeksowane od 0
+>>>>>>> c4571b7078a77549b81377a8cb592f4e2e576fc1
       if (wariant === 0) { // Władca wyruszył na plemię
         status = imieWczesne.daj(0) + ', ' + wladcaWczesny.daj(0) + ' ' + plemieWlasne.daj(1) + ', ' + wyruszyl.daj(0) + ' na ' + plemieObce.daj(1)
       } else if (wariant === 1) { // Bitwa pod X, Z zwycięża Y
@@ -90,6 +105,7 @@ $(document).ready(function () {
       } else if (wariant === 3) { // Wizyta cesarza
         var kturyCesarz = losuj(4) + 1
         kturyCesarz = romanizuj(kturyCesarz)
+<<<<<<< HEAD
         status = zjazdWczesny.daj(0) + ' w ' + miastoWczesne.daj(2) + '. Cesarz ' + cesarzWczesny.daj(0) + ' ' + kturyCesarz + ' ' + wizytowal.daj(0) + ' ' + wladcaWczesny.daj(2) + ' ' + imieWczesne.daj(1)
       } else if (wariant === 4) { // Święty zamordowany
         status = 'Święty  ' + imieSwietyWczesny.daj(0) + ' ' + zginalMeczensko.daj(0) + ' ' + naMisjiWczesne.daj(0) + ' ' + plemieObce.daj(1)
@@ -99,6 +115,11 @@ $(document).ready(function () {
         status = bunt.daj(0) + ' ' + urzednikWczesny.daj(1) + ' ' + imieWczesne.daj(1)
       } else if (wariant === 7) { // Władca bierze żone
         status = wladcaWczesny.daj(0) + ' ' + imieWczesne.daj(0) + ' ' + poslubil.daj(0) + ' ' + plemieObce.daj(3) + ' ' + wladczyniWczesna.daj(1) + ' ' + imieKWczesne.daj(1)
+=======
+        status = zjazdWczesny.daj(0) + ' w ' + miastoWczesne.daj(2) + '. ' + cesarzWczesny.daj(0) + ' ' + kturyCesarz + ' ' + wizytowal.daj(0) + ' ' + wladcaWczesny.daj(2) + ' ' + imieWczesne.daj(1)
+      } else if (wariant === 5) {
+        status = wladcaWczesny.daj(0) + ' ' + imieWczesne.daj(0) + ' ' + startuje.daj(0) + ' budowę ' + budynekWczesny.daj(1) + ' w ' + miastoWczesne.daj(2)
+>>>>>>> c4571b7078a77549b81377a8cb592f4e2e576fc1
       }
     } else if (danyRok >= 1200 && danyRok < 1400) { // Generuj drugą epokę
       status = 'druga epoka'

@@ -55,11 +55,14 @@ $(document).ready(function () {
   // Właściwy słownik
   // Użycie: slowo.daj(deklinacja)
   var bitwa = new Slowo([['bitwa', 'bitwy'], ['potyczka', 'potyczki'], ['starcie', 'starcia']])
+  var budynekWczesny = new Slowo([['baszta', 'baszty'], ['palisada', 'palisady'], ['wały', 'wałów'], ['wieża', 'wieży'], ['zamek', 'zamku']])
   var cesarzWczesny = new Slowo([['Berengar', 'Beregara'], ['Henryk', 'Henryka'], ['Ludwik', 'Ludwika'], ['Otton', 'Ottona']])
   var imieWczesne = new Slowo([['Leszko', 'Leszka'], ['Mieszko', 'Mieszka'], ['Przedbor', 'Przedbora']])
   var miastoWczesne = new Slowo([['Biskupin', 'Biskupinem', 'Biskupinie'], ['Cedynia', 'Cedynią', 'Cedyni'], ['Płock', 'Płockiem', 'Płocku']])
   var plemieObce = new Slowo([['Bułgarzy', 'Bułgarów'], ['Czesi', 'Czechów'], ['Rusini', 'Rusinów']])
   var plemieWlasne = new Slowo([['Lędzianie', 'Lędzian'], ['Polanie', 'Polan'], ['Wiślanie', 'Wiślan']])
+  var startuje = new Slowo([['rozpoczął'], ['zaczął']])
+  var startujeSie = new Slowo([['rozpoczęła się'], ['zaczęła się']])
   var wizytowal = new Slowo([['gościł u'], ['nawiedził'], ['odwiedził'], ['wizytował']])
   var wladcaWczesny = new Slowo([['kniaź', 'kniazia', 'kniazia'], ['książę', 'księcia', 'księcia'], ['wojewoda', 'wojewody', 'wojewodę']])
   var wyruszyl = new Slowo([['najechał'], ['podjął wyprawę'], ['ruszył'], ['wyruszył']])
@@ -69,10 +72,10 @@ $(document).ready(function () {
   // A tutaj wielki generator
   var generator = function () { // eslint-disable-line no-unused-vars
     if (start === 1) { // Generuj chrzest
-      status = imieWczesne.daj(0) + ', władca ' + plemieWlasne.daj(1) + ', przyjmuje chrzest od ' + plemieObce.daj(1)
+      status = imieWczesne.daj(0) + ', władca ' + plemieWlasne.daj(1) + ', przyjął chrzest od ' + plemieObce.daj(1)
       start = 0
     } else if (start === 0 && danyRok < 1200) { // Generuj pierwszą epokę
-      var wariant = losuj(4) // arg = liczba generatorów, ale indeksowane od 0
+      var wariant = losuj(6) // arg = liczba generatorów, ale indeksowane od 0
       if (wariant === 0) { // Władca wyruszył na plemię
         status = imieWczesne.daj(0) + ', ' + wladcaWczesny.daj(0) + ' ' + plemieWlasne.daj(1) + ', ' + wyruszyl.daj(0) + ' na ' + plemieObce.daj(1)
       } else if (wariant === 1) { // Bitwa pod X, Z zwycięża Y
@@ -83,6 +86,8 @@ $(document).ready(function () {
         var kturyCesarz = losuj(4) + 1
         kturyCesarz = romanizuj(kturyCesarz)
         status = zjazdWczesny.daj(0) + ' w ' + miastoWczesne.daj(2) + '. ' + cesarzWczesny.daj(0) + ' ' + kturyCesarz + ' ' + wizytowal.daj(0) + ' ' + wladcaWczesny.daj(2) + ' ' + imieWczesne.daj(1)
+      } else if (wariant === 5) {
+        status = wladcaWczesny.daj(0) + ' ' + imieWczesne.daj(0) + ' ' + startuje.daj(0) + ' budowę ' + budynekWczesny.daj(1) + ' w ' + miastoWczesne.daj(2)
       }
     } else if (danyRok >= 1200 && danyRok < 1400) { // Generuj drugą epokę
       // Generatory późniejszego średniowiecza

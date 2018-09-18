@@ -18,6 +18,7 @@ $(document).ready(function () {
 
   // Konwertuj numer arabski na rzymski
   // http://blog.stevenlevithan.com/archives/javascript-roman-numeral-converter
+  // PRZEGRANE
   function romanizuj (num) {
     if (!+num) {
       return false
@@ -33,6 +34,7 @@ $(document).ready(function () {
   }
 
   // Losuje któryś z N elementów
+  // PRZEGRANE
   var losuj = function (n) {
     return Math.floor(Math.random() * (n))
   }
@@ -42,6 +44,7 @@ $(document).ready(function () {
   // Trzeba pchnąć jeden array, dlatego niżej w get musi wejść najpierw w array[0]
   // A niżej w słowniku trzeba trzepać [[...]]
   // Problemy nieistotne (już), ważne że da się wyciągać deklinację
+  // PRZEGRANE
   function Slowo (materia) {
     this.warianty = Array(materia)
     this.daj = function (deklinacja) {
@@ -63,8 +66,10 @@ $(document).ready(function () {
   var imieKWczesne = new Slowo([['Bożena', 'Bożenę'], ['Dobrawa', 'Dobrawę'], ['Dobromiła', 'Dobromiłę'], ['Lubomira', 'Lubomirę'], ['Milena', 'Milenę'], ['Mojmira', 'Mojmirę'], ['Rzepicha', 'Rzepichę'], ['Świetlana', 'Świetlanę'], ['Wanda', 'Wandę']])
   var miastoWczesne = new Slowo([['Biskupin', 'Biskupinem', 'Biskupinie'], ['Cedynia', 'Cedynią', 'Cedyni'], ['Płock', 'Płockiem', 'Płocku']])
   var naMisjiWczesne = new Slowo([['ewangelizując'], ['nawracając'], ['na terytorium'], ['na ziemiach'], ['w trakcie misji pośród'], ['w trakcie misji wśród']])
+  var organizacja = new Slowo([['ONZ', 'ONZ'], ['Unia Europejska', 'Unii Europejskiej'], ['NATO', 'NATO'], ['Światowa Organizacja Handlu', 'Światowej Organizacji Handlu'], ['Grupa Wyszechradzka', 'Grupy Wyszechradzkiej']])
   var plemieObce = new Slowo([['Bułgarzy', 'Bułgarów'], ['Czesi', 'Czechów'], ['Rusini', 'Rusinów']])
   var plemieWlasne = new Slowo([['Lędzianie', 'Lędzian'], ['Polanie', 'Polan'], ['Wiślanie', 'Wiślan']])
+  var poslubil = new Slowo([['poślubił'], ['wziął za żonę']])
   var startuje = new Slowo([['rozpoczął'], ['zaczął']])
   var startujeSie = new Slowo([['rozpoczęła się'], ['zaczęła się']])
   var wizytowal = new Slowo([['gościł u'], ['nawiedził'], ['odwiedził'], ['wizytował']])

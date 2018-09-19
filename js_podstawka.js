@@ -6,9 +6,42 @@ var historia = String()
 var rokKoniec = 2018 // TODO: current.year
 var rokStart = 960 // const
 
+function dajEpoke (n) {
+  if (n < 1200) {
+    return 1
+  } else if (n >= 1200 && n < 1400) { // Generuj drugą epokę
+    return 2
+  } else if (n >= 1400 && n < 1600) {
+    return 3
+  } else if (n >= 1600 && n < 1800) {
+    return 4
+  } else if (n >= 1800 && n < 1914) {
+    return 5
+  } else if (n >= 1914 && n < 1946) {
+    return 6
+  } else if (n >= 1946 && n < 1989) {
+    return 7
+  } else if (n >= 1989 && n < rokKoniec) {
+    return 8
+  } else {
+    return 9
+  }
+}
+
 // Losuje któryś z N elementów
 function losuj (n) {
   return Math.floor(Math.random() * (n))
+}
+
+// Udostępnia metodę .daj() do wyciągania przypadkowego wyrazu
+function Slowo (materia) {
+  this.warianty = Array(materia)
+  this.daj = function (deklinacja) {
+    var liczba = this.warianty[0].length
+    var wylosowane = losuj(liczba)
+    var slowo = this.warianty[0][wylosowane][deklinacja]
+    return slowo
+  }
 }
 
 // Konwertuj numer arabski na rzymski

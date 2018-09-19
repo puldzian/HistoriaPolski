@@ -1,19 +1,9 @@
-/* global losuj */
+/* global losuj, Slowo */
 'use strict'
 
-// Udostępnia metodę .daj() do wyciągania przypadkowego wyrazu
-function Slowo (materia) {
-  this.warianty = Array(materia)
-  this.daj = function (deklinacja) {
-    var liczba = this.warianty[0].length
-    var wylosowane = losuj(liczba)
-    var slowo = this.warianty[0][wylosowane][deklinacja]
-    return slowo
-  }
-}
+
 
 // Zmienne historyczne
-var pierwszyKrol // Do celów pomnikowych
 
 // Zmienne słownikowe
 var imieMWczesne = new Slowo([['Leszko', 'Leszka'], ['Mieszko', 'Mieszka'], ['Przedbor', 'Przedbora']])

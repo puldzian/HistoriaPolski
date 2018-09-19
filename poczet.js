@@ -6,27 +6,6 @@ $(document).ready(function () {
   var danyRok = 960
   var rokKonca = 2016
 
-  // Losuje któryś z N elementów
-  var losuj = function (n) {
-    return Math.floor(Math.random() * (n))
-  }
-
-  // Maszynka do kompilowania zdań w historię
-  var wystawZdanie = function (wygenerowane) {
-    var status = wygenerowane + '. '
-    poczet = poczet + status + ' '
-  }
-
-  function Slowo (materia) {
-    this.warianty = Array(materia)
-    this.daj = function (deklinacja) {
-      var liczba = this.warianty[0].length
-      var wylosowane = losuj(liczba)
-      var slowo = this.warianty[0][wylosowane][deklinacja]
-      return slowo
-    }
-  }
-
   // END IMPORT
 
   function Krol (imie, numer, przydomek, rokStart, dlugoscZycia) {

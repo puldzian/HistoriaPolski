@@ -14,35 +14,35 @@ $(document).ready(function () {
       wystawZdanie(rokTeraz, zdanie)
       start = 0
     } else if (start === 0 && rokTeraz < 1200) { // Epoka 1
-      rokTeraz = rokTeraz + losuj(30)
+      rokTeraz = rokTeraz + losuj(30) + 10
       zdanie = gen(1)
       wystawZdanie(rokTeraz, zdanie)
     } else if (rokTeraz >= 1200 && rokTeraz < 1400) { // Epoka 2
-      rokTeraz = rokTeraz + losuj(30)
+      rokTeraz = rokTeraz + losuj(30) + 10
       zdanie = gen(2)
       wystawZdanie(rokTeraz, zdanie)
     } else if (rokTeraz >= 1400 && rokTeraz < 1600) { // Epoka 3
-      rokTeraz = rokTeraz + losuj(30)
+      rokTeraz = rokTeraz + losuj(30) + 10
       zdanie = gen(3)
       wystawZdanie(rokTeraz, zdanie)
     } else if (rokTeraz >= 1600 && rokTeraz < 1800) { // Epoka 4
-      rokTeraz = rokTeraz + losuj(25)
+      rokTeraz = rokTeraz + losuj(25) + 10
       zdanie = gen(4)
       wystawZdanie(rokTeraz, zdanie)
     } else if (rokTeraz >= 1800 && rokTeraz < 1914) { // Epoka 5
-      rokTeraz = rokTeraz + losuj(10)
+      rokTeraz = rokTeraz + losuj(10) + 5
       zdanie = gen(5)
       wystawZdanie(rokTeraz, zdanie)
     } else if (rokTeraz >= 1914 && rokTeraz < 1946) { // Epoka 6
-      rokTeraz = rokTeraz + losuj(5)
+      rokTeraz = rokTeraz + losuj(5) + 3
       zdanie = gen(6)
       wystawZdanie(rokTeraz, zdanie)
     } else if (rokTeraz >= 1946 && rokTeraz < 1989) { // Epoka 7
-      rokTeraz = rokTeraz + losuj(5)
+      rokTeraz = rokTeraz + losuj(5) + 3
       zdanie = gen(7)
       wystawZdanie(rokTeraz, zdanie)
     } else if (rokTeraz >= 1989 && rokTeraz < rokKoniec) { // Epoka 8
-      rokTeraz = rokTeraz + losuj(5)
+      rokTeraz = rokTeraz + losuj(5) + 1
       zdanie = gen(8)
       wystawZdanie(rokTeraz, zdanie)
     } else if (rokTeraz >= rokKoniec) {

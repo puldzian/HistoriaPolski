@@ -35,11 +35,18 @@ function losuj (n) {
 
 // Udostępnia metodę .daj() do wyciągania przypadkowego wyrazu
 function Slowo (materia) {
-  this.warianty = Array(materia)
+  var warianty = Array(materia)
   this.daj = function (deklinacja) {
-    var liczba = this.warianty[0].length
+    var liczba = warianty[0].length
     var wylosowane = losuj(liczba)
-    var slowo = this.warianty[0][wylosowane][deklinacja]
+    var slowo = warianty[0][wylosowane][deklinacja]
+    return slowo
+  }
+  this.wytnij = function (deklinacja) {
+    var liczba = warianty[0].length
+    var wylosowane = losuj(liczba)
+    var slowo = warianty[0][wylosowane][deklinacja]
+    warianty.splice(wylosowane, 1)
     return slowo
   }
 }

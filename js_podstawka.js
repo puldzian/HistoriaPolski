@@ -49,6 +49,13 @@ function Slowo (materia) {
     warianty.splice(wylosowane, 1)
     return slowo
   }
+  this.wycnij = function (deklinacja) {
+    var liczba = warianty[0].length
+    var wylosowane = losuj(liczba)
+    var slowo = warianty[0][wylosowane][deklinacja]
+    console.log('liczba to ' + liczba)
+    return slowo
+  }
 }
 
 // Konwertuj numer arabski na rzymski
@@ -75,6 +82,7 @@ function wielkaPierwszaLitera (arg) {
 
 // Maszynka do kompilowania zdań w historię
 function wystawZdanie (rok, wygenerowane) { // TODO: wkomponować to w generator
+  wygenerowane = wielkaPierwszaLitera(wygenerowane)
   var status = '<b>' + rok + '</b>&nbsp;–&nbsp;' + wygenerowane + '. '
   historia = historia + status + ' '
 }
